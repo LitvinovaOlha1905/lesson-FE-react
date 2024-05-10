@@ -1,0 +1,21 @@
+.order_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.order_form input {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.order_form button {
+  padding: 10px;
+  border: 1px solid transparent;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

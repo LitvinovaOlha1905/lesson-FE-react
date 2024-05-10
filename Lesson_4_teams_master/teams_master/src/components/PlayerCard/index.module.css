@@ -1,0 +1,15 @@
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid green;
+  width: 800px;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+.player:hover {
+  background-color: green;
+  color: white;
+}

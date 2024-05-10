@@ -1,0 +1,65 @@
+1. npm i redux react-redux 
+2. Создать store
+3. Связать store с App
+4. Создать форму AddPlaceForm (3 инпута + кнопка). При сабмите - формировать объект и выводить его в консоль
+
+Пример объекта:
+
+{
+  id: unique,
+  country: input1.value,
+  capital: input2.value,
+  currency: input3.value
+}
+
+5. Создать placesReducer и добавить его в rootReducer (ключ: places)
+6. Создать addPlaceAction и прописать логику в placesReducer
+7. Создать dispatch и применить к addPlaceAction
+8. Создать PlacesContainer и PlaceCard (3 параграфа). PlacesContainer в App.
+9. Отрисовать PlaceCard в PlacesContainer, обращаясь к состоянию из placesReducer
+10. Добавить к каждой карточке крестик (в правый верхний угол), при клике на который карточка удаляется
+
+npm i react-icons
+
+11. Добавить к каждой карточке сердечко. При клике на сердечко - перекрашивается в красный. При повторном клике - обратно в исходный цвет
+12. В PlacesContainer добавить кнопку, при клике на которую все карточки удаляются
+13. Когда нет карточек, выводить сообщение/параграф 'No places added...'
+14. Создать MainPage (/) и PlacesPage (/places). Реализовать роутинг
+15. Создать NavMenu (Main, Places). При клике на пункт меню перебрасывает на соответствующий роут 
+16. AddPlaceForm и PlacesContainer перенести на PlacesPage
+17. Добавить кнопку Change color, при клике на которую у всех карточек меняется цвет заднего фона
+
+
+18. Создать UsersPage, добавить к роутингу (/users)
+19. Создать usersReducer, добавить в rootReducer
+20. Создать loadUsersAction, прописать логику в usersReducer
+21. В отдельной файле написать функцию getAllUsers отправляющую запрос по ссылке https://jsonplaceholder.typicode.com/users и помещает полученные по запросу данные в состояние в usersReducer
+22. Вызвать функцию getAllUsers с ипользованием useEffect()
+23. С помощью useSelector получить состояние из store и отрисовать из него карточки
+
+
+24. Создать TodosPage, добавить к роутингу (/todos)
+25. Создать todosReducer, добавить в rootReducer
+26. Создать loadTodosAction, прописать логику в todosReducer
+27. В отдельной файле написать функцию getAllTodos отправляющую запрос по ссылке https://jsonplaceholder.typicode.com/todos и помещает полученные по запросу данные в состояние в todosReducer
+28. Вызвать функцию getAllTodos с иcпользованием useEffect()
+29. С помощью useSelector получить состояние из store и отрисовать из него карточки
+
+При клике на карточку юзера открывать страницу с подробным описанием юзера:
+
+30. Создать SingleUserPage и подключить к роутингу (/user/:user_id)
+31. При клике на карточку юзера перебрасывает на роут, в который вместо user_id подставляется id юзера
+32. Написать функцию getSingleUser, которая отправляет запрос по ссылке https://jsonplaceholder.typicode.com/users/{user_id} и выводит данные о юзере в консоль
+33. Вызвать getSingleUser в SingleUserPage (использовать useParams)
+34. Создать singleUserReducer, добавить в rootReducer 
+35. Создать loadSingleUserAction, прописать логику в singleUserReducer
+36. Вызвать loadSingleUserAction при отправке запроса
+37. Достать стейт юзера из store и отрисовать данные
+
+
+ДЗ:
+https://dummyjson.com/products
+
+1. Создать страницу с продуктами, подключить к роутингу 
+2. На странице отрисовать карточки всех продуктов, доступный по ссылке https://dummyjson.com/products
+3. При клике на карточку продукта открывать страницу с подробным описанием этого продукта

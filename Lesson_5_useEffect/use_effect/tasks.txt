@@ -1,0 +1,21 @@
+1. Создать MainPage (/), UsersPage (/users), ProductsPage (/products), NavMenu (Main, Users, Products)
+2. Настроить роутинг
+3. При клике на Main, Users, Products перебрасывает на соответствующие страницы
+4. В отдельном файле написать функцию getAllUsers, которая при вызове отправляет запрос по ссылке https://dummyjson.com/users и выводит в консоль массив с юзерами
+5. Вызвать функцию на странице UsersPage
+6. В UsersPage cоздать состояние users(+setUsers) с изначальным состоянием [] и поместить полученные по запросы данные в состояние users
+7. Создать UsersContainer и UserCard
+8. Импортировать UsersContainer в UsersPage
+9. Передать состояние users в UsersContainer через context
+10. Отрисовать пользоввтелей (UserCard - image, firstName, lastName) в UsersContainer 
+
+11. В отдельном файле написать функцию getAllProducts, которая при вызове отправляет запрос по ссылке https://dummyjson.com/products и выводит в консоль массив с юзерами (ProductsPage)
+12. Создать состояние products(+setProducts) и поместить в состояние получаемые по запросу данные. Проверить через console.log(), что записалось в состояние и убедиться, что состояние products обновляется один раз при перезагрузке компонента
+13. Создать ProductsContainer и ProductCard
+14. Из состояния products отрисовать карточки продуктов (image, title, price)
+
+ДЗ:
+1. Создать страницу TodoPage (/todos)
+2. Подключить к роутингу
+3. Добавить Todo в NavMenu
+4. На странице TodoPage отрисовать карточки Todo (2 p - todo, status(true = done/ false = not done)), данные взять по ссылке: https://dummyjson.com/todos

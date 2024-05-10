@@ -1,0 +1,46 @@
+1. Создать PostsContainer и Post
+2. Импортировать PostsContainer в App
+3. В App создать состояние posts(+setPosts) и поместить в состояние posts данные из postsData
+4. Проверить состояние posts через console.log()
+5. Из состояния posts в PostsContainer отрисовать Post (title, description, like). Добавить в карточку сердечко. Если like true - сердечко красное, а если like false - прозрачное/белое
+6. Стилизовать посты
+7. Реализовать функцию changeLike(), вызывать функцию при клике на сердечко
+8. Добавить крестик к посту
+9. Реализовать функцию deletePost(), вызывать функцию при клике на крестик 
+10. Создать AddPostForm (2 инпута + кнопка). Импортировать форму в App. При сабмите формы формируется объект с постом и выводится в консоль
+
+Пример объект:
+
+{
+  id: Date.now(),
+  title: input1.value,
+  description: input2.value,
+  like: false,
+  comments: []
+}
+
+11. Реализовать функцию addNewPost, вызывать функцию с переданным в нее новым объектом при сабмите формы
+12. Создать CommentsBlock, CommentsContainer, Comment
+13. Импортировать CommentsBlock в Post, CommentsContainer в CommentsBlock
+14. В CommentsContainer отрисовать комментарии (Comment):
+- Массив comments  из Post перебросить в CommentsBlock, из CommentsBlock в CommentsContainer
+- В CommentsContainer пройтись по массиву comments методом map и отрисовать Comment
+- Comment принимает пропсы id, text
+15. Создать AddCommentForm (1 инпут + кнопка)
+16. Импортировать AddCommentForm в CommentsBlock (под CommentsContainer)
+17. При сабмите AddCommentForm формирует объект и выводит его в консоль 
+
+Пример объекта:
+{
+  id: Date.now(),
+  text: input.value
+}
+
+18. Реализовать функцию addNewPost - функция принимает новый комментарий (объект) и добавляет его в массив comments выбранного поста
+19. Вызвать функцию addNewPost при сабмите AddCommentForm
+20. Реализовать функцию deleteComment. Функция принимает 2 аргумента - post_id, comment_id. Вызвать функцию при клике на Comment
+
+21. Если у поста нет комментариев, то цвет заднего фона покрасить в светло-голубой, а если есть - то в светло-розовый
+22. В CommentsBlock добавить кнопку, при клике на которую удаляются все комментарии
+- реализовать функцию deleteAllComments
+- вызвать функцию deleteAllComments при клике на кнопку

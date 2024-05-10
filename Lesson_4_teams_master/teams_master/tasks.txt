@@ -1,0 +1,59 @@
+// РОУТИНГ 
+
+1.  Установить React Router - npm i react-router-dom
+2. Обернуть приложение App в BrowserRouter
+
+    В index.js:
+        import { BrowserRouter } from 'react-router-dom'
+
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+
+3. Создать компоненты MainPage, ConfigPage, TeamsPage, NavMenu
+4. Настроить роутинг -  сделать так, чтобы NavMenu был на всех страницах, а контент под меню зависил от того, на каком роуте мы находимся
+5. В NavMenu добавить 3 пункта - Main, Configurations, Teams. При клике на каждый пункт меню должно перебрасывать на соответствующий роут
+
+// ФОРМЫ на странице ConfigPage
+
+6. Создать AddTeamForm (p, input, button). Стилизовать
+7. Импортировать AddTeamForm в ConfigPage
+8. При сабмите AddTeamForm собирать данные, формировать объект и выводить его в консоль
+
+Пример объекта:
+
+{
+  id: unique,
+  team: input.value
+}
+
+9. Создать AddPlayerForm (p, input, Select, button). Стилизовать
+10. Импортировать AddPlayerForm в ConfigPage
+11. Установить React Select - npm i react-Select
+12. В AddPlayerForm добавить Select 
+13. Создать состояние teams(+setTeams), в качестве изначального состояния []
+14. При сабмите формы формировать объект {value, label} и добавлять его в состояние teams
+15. Состояние teams передать в атрибут options у Select
+
+
+// Игроки
+
+16. Создать PlayerCard и PlayersContainer
+17. Импортировать PlayersContainer в TeamsPage
+18. Создать состояние players(+setPlayers), в качестве изначального состояния []
+19. При сабмите AddPlayerForm формировать объект с данными и выводить его в консоль
+
+Пример объекта:
+
+{
+  id: unique,
+  player: input.value,
+  team: select.value
+}
+
+20. Написать функцию addNewPlayer, которое будет добавлять новых игроков в состояние players
+21. Создать контекст
+22. Из состояния players в PlayersContainer отрисовать карточки PlayerCard (player, team)
+23. На странице TeamsPage - если игроков нет, то выводить сообщение 'No players added...', а если есть, то отрисовывать карточки игроков
+24. На каждую карточку повесить крестик (react-icons), при клике на который карточка удаляется
+25. Добавить на страницу TeamsPage кнопку (div, стилизованный под кнопку), при клике на которую удаляются все карточки пользователей

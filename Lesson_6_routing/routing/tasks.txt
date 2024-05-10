@@ -1,0 +1,34 @@
+1. Создать MainPage (/), CategoriesPage (/categories), NavMenu (Main, Categories) , Footer
+2. Настроить роутинг
+3. При клике на пункты меню должно перебрасывать на соответствующие роуты
+4. Создать NotFoundPage и подключить к роутингу
+5. Написать в отдельном файле функцию getAllCategories, которая отправляет fetch-запрос по ссылке https://api.escuelajs.co/api/v1/categories и полученные данные выводит в консоль
+6. Вызвать функцию getAllCategories в App
+7. Создать состояние categories(+setCategories) и поместить в состояние categories полученные по запросу данные 
+8. Для проверки содержимого состояния categories вывести его в консоль - [] -> [{}, {}, {}, {}, {}]
+9. Создать CategoriesContainer и CategoryCard
+10. Импортировать CategoriesContainer в CategoriesPage
+11. Из состояния categories отрисовать карточки категорий (CategoryCard - image, name) в CategoriesContainer. Использовать context
+
+=====
+
+Динамический роутинг
+12. Создать ProductsByCategoryPage (/products/{category_id}) и подключить к роутингу
+13. При клкие на карточку товара переходить на роут с соттветствующим category_id
+14. Написать функцию getProductsByCategory(), которая отправляет запрос по ссылке https://api.escuelajs.co/api/v1/categories/{id}/products и выводит полученные данные в консоль
+15. Создать состояние productsByCategory(+setProductsByCategory) и поместить полученные по запросу данные в состояние.
+16. Создать ProductsContainer и ProductCard
+17. Из состояния productsByCategory в ProductsContainer отрисовать карточки товаров (ProductCard)
+
+
+====
+
+18. Создать RecipesPage и подлючить к роутингу (/recipes)
+19. В NavMenu добавить Recipes, при клике должно перебрасывать на страницу /recipes
+20. Создать RecipesContainer и RecipeCard
+21. На странице RecipesPage отрисовать карточки рецептов (image, name)
+22. При клике на карточку рецепта переходить на страницу с подробным описанием рецепта
+  - Создать SingleRecipePage и подключить к роутингу (/recipe/:recipe_id)
+  - Написать функцию getSingleRecipe, ссылка https://dummyjson.com/recipes/{recipe_id}
+  - Создать состояние singleRecipe(+setSingleRecipe) и поместить полученные по запросу данные в состояние singleRecipe
+  - На странице SingleRecipePage отрисовать данные из состояния singleRecipe (объект)

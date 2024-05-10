@@ -1,0 +1,89 @@
+// Настройка store
+1. Создать store (+redux-thunk) и подключить его к App
+
+// Роутинг
+2. Создать MainPage, CategoriesPage, NotFoundPage. Настроить роутинг.
+3. Создать NavMenu (Main, Categories). При клике на пункты меню перебрасывать на соответствующий роут
+
+// Отрисовать карточки категорий на CategoriesPage
+4. Создать categoriesReducer, добавить в rootReducer
+5. Создать CategoriesContainer и CategoryCard.
+6. Импортировать CategoriesContainer в CategoriesPage
+7. Создать loadAllCategoriesAction, прописать логику в categoriesReducer
+8. Написать функцию, отправляющую запрос по ссылке https://fakestoreapi.com/products/categories и записывающую полученные данные в состояние в categoriesReducer
+9. Вызвать функцию в CategoriesContainer
+10. С помощью useSelector обратиться к состоянию под ключом categories. Проверить через консоль полученное состояние
+11. Из categoriesState отрисовать карточки категорий
+
+
+// При клике на карточку категории открывать страницу с продуктами этой категории 
+12. Создать ProductsByCategoryPage, подключить к роутинг (/category/:category_name)
+13. При клике на CategoryCard перебрасывать на роут /category/:category_name, где в category_name подставляется название категории
+14. Создать productsByCategoryReducer, добавить в rootReducer (ключ productsByCategory)
+15. Создать loadProductsByCategory, прописать локигу в productsByCategoryReducer
+16. Написать функцию getProductsByCategory, которая отправляет запрос по ссылке https://fakestoreapi.com/products/category/{category_name} и записывает полученные данные в состояние
+17. Создать ProductsContainer и ProductCard 
+18. Вызвать функцию getProductsByCategory в ProductsContainer
+19. С помощью useSelector обратиться к состоянию в productsByCategoryReducer
+20. Из состояния отрисовать карточки продуктов в ProductsContainer (image, title, price)
+
+
+// При клике на карточку продукта открывать страницу с подробным описанием этого продукта
+21. Создать SingleProductPage и подключить к роутингу (/product/:product_id)
+22. При клике на карточку продукта перебрасывает на роут, в который вместо product_id подставляется id продукта
+23. Создать singleProductReducer, добавить в rootReducer 
+24. Создать loadSingleProductAction, прописать логику в singleProductReducer
+25. Написать функцию getSingleProduct, которая отправляет запрос по ссылке https://fakestoreapi.com/products/{product_id} и добавляет полученные данные в состояние
+26. Вызвать функцию getSingleProduct в SingleProductPage (использовать useParams)
+27. Достать стейт продукта из store и отрисовать данные
+28. При клике на категорию продукта перебрасывать на страницу с продуктами этой категории
+
+
+// Создать корзину
+29. Создать CartPage и добавить к роутингу
+30. В NavMenu добавить кнопку Cart
+31. Создать cartReducer, добавить его в rootReducer 
+32. Создать addToCartAction, прописать логику в cartReducer
+33. Создать кнопки 'add to cart' в компонентах ProductCard и SingleProductPage
+34. Вызвать функцию addToCartAction при клике на кнопки 'add to cart'
+35. Создать CartItemsContainer и CartItem
+36. Импортировать CartItemsContainer в CartPage
+37. Через useSelector достато состояние cart, отрисовать в CartItemsContainer карточки продуктов в корзине (CartItem)
+38. Реализовать удаление карточки по клику на крестик (добавить крестик в правый верхний угол CartItem)
+39. Реализовать очистку корзины при клике на кнопку CLEAR CART (добавить в CartItemsContainer)
+40. Реализовать увеличение значения count на 1, при клике на +
+41. Реализовать уменьшение значения count на 1, при клике на -. Если в count 1, то при клике на - удалять карточку из корзины
+42. Добавить в контейнер пункт Total: XX с общей суммой товаров в корзине
+43. Добавить содержимое корзины в localStorage => при обновлении страницы содержимое корзины не обнулялось
+
+// Создать форму отправки заказа
+44. Создать sendOrderForm (имя + мэйл + button)
+45. Добавить sendOrderForm на страницу CartPage
+45. При сабмите sendOrderForm собирать данные из инпутов, формировать объект и выводить его в консоль
+
+Пример объекта:
+
+{
+  id: Date.now(),
+  name: input1.value,
+  email: input2.value,
+  total: XXX,
+  cart: [{}, {}, {}]
+}
+
+// Открыть модальное окно с сообщением
+46. Создать ModalWindow, добавить в App 
+47. Стилизовать ModalWindow
+48. Создать состояние modalActive(+setModalActive) и в изначальное состояние положить false
+    flase - модальное окно закрыто
+    true - модальное окно открыто
+49. Создать контекст, передать через него состояние modalActive из App в ModalWindow 
+50. Если в modalActive лежит true, то у div.modal появляется класс active. Если в modalActive лежит false, то у div.modal класс active пропадает.
+51. При сабмите формы открывать ModalWindow => при сабмите формы менять состояние modalActive на true
+52. При клике на крестик внутри ModalWindow, закрывать модальное окно => при сабмите формы менять состояние modalActive на false
+
+
+// Сделать переключение темы (дневная-вечерняя)
+53. Создать состояние nightMode(+setNightMode), в изначальное состояние положить false
+54. Импортировать иконки (OFF-ON) из библиотеки
+55. При клике на иконку менять значение nightMode на противоположное

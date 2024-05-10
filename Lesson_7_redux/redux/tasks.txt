@@ -1,0 +1,42 @@
+1. npm i redux react-redux
+2. Создать store
+3. Связать созданный store с App
+4. Создать UsersContainer и UserCard. Импортировать UsersContainer в App
+5. Создать usersReducer
+6. Добавить usersReducer в rootReducer (index.js)
+7. В UsersContainer обратиться к store через useSelector и по ключу users достать состояние из usersReducer
+8. Отрисовать из полученого состояния карточки пользователей
+9. Создать deleteUserAction и прописать логику в usersReducer
+10. Создать dispatch через useDispatch()
+11. Вызвать deleteUserAction через dispatch при клике на крестик
+
+12. Создать AddUserForm (3 инпута + кнопка). При сабмите формы формировать объект и выводить его в консоль
+
+пример объекта
+
+{
+  id: Date.now(),
+  firstname: input1.value,
+  lastname: input2.value,
+  age: input3.value
+}
+
+13. Создать addUserAction и прописать для него логику в usersReducer
+14. Вызвать addUserAction через dispatch при сабмите формы, передавая в него сформированный при сабмите формы объект
+
+15. Создать incrAgeAction и прописать для него логику в usersReducer
+16. Вызвать incrAgeAction вызывать при клике на +
+17. Создать decrAgeAction и прописать для него логику в usersReducer
+18. Вызвать decrAgeAction вызывать при клике на -
+
+19. Создать productsReducer (изначальное состояние - productsData) и добавить его в rootReducer
+20. Создать ProductsContainer и ProductCard. Добавить ProductsContainer в App 
+21. В ProductsContainer с помощью useSelector достать состояние из productsReducer и отрисовать карточки продуктов
+22. Реализовать удаление продукта по клику на карточку
+  - создать deleteProductAction
+  - прописать логику в productsReducer 
+  - создать dispatch
+  - вызвать deleteProductAction через dispatch при клике на карточку
+
+23. При клике на + увеличивать price на 10
+24. При клике на - уменьшать price на 10

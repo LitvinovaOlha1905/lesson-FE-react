@@ -1,0 +1,32 @@
+.navMenu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.navMenu a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid transparent;
+}
+
+.navMenu a:hover {
+  border-bottom: 1px solid black;
+}
+
+.navMenu a:nth-child(3) {
+  position: relative;
+}
+
+.navMenu span {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 14px;
+  background-color: darkgreen;
+  color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+}

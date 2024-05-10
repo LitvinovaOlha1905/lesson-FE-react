@@ -1,0 +1,15 @@
+.card {
+  border: 1px solid black;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: darkblue;
+  color: white;
+}
